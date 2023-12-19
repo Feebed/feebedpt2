@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1bo45vb1ubld"]
+
+[ext_resource type="Script" path="res://movement.gd" id="1_2nw68"]
+[ext_resource type="Script" path="res://camera.gd" id="2_7os2w"]
+[ext_resource type="Script" path="res://shoot.gd" id="3_p23t6"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e8rja"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_0m8ky"]
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+script = ExtResource("1_2nw68")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_e8rja")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_0m8ky")
+
+[node name="Marker3D" type="Marker3D" parent="CollisionShape3D/MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020413, 0, -1.28726)
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+spring_length = 5.0
+script = ExtResource("2_7os2w")
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+fov = 53.9911
+script = ExtResource("3_p23t6")
