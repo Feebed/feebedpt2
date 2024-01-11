@@ -1,5 +1,5 @@
 extends CharacterBody3D
-
+@export var mouse_sensetivity := 0.005
 
 const SPEED = 16.0
 const JUMP_VELOCITY = 4.5
@@ -30,4 +30,12 @@ func _physics_process(delta):
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 
 	move_and_slide()
+func _input(event): 
+	if event is InputEventMouseMotion:
+		rotation.x -= event.relative.y * mouse_sensetivity 
+		rotation.x = clamp(rotation.x, deg_to_rad(-90), deg_to_rad(30))
+		rotation.y -= event.relative.x * mouse_sensetivity 
+		rotation.y = wrapf(rotation.y, -PI, PI )
+	
+	 
 #rotate the mesh add a line at after 27  then add momentum. then you should start making enimies 

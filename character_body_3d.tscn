@@ -8,17 +8,11 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_0m8ky"]
 
-[node name="CharacterBody3D" type="CharacterBody3D"]
+[node name="Player" type="CharacterBody3D"]
 script = ExtResource("1_2nw68")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_e8rja")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
-mesh = SubResource("CapsuleMesh_0m8ky")
-
-[node name="Marker3D" type="Marker3D" parent="CollisionShape3D/MeshInstance3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020413, 0, -1.28726)
 
 [node name="SpringArm3D" type="SpringArm3D" parent="."]
 spring_length = 5.0
@@ -27,3 +21,10 @@ script = ExtResource("2_7os2w")
 [node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
 fov = 53.9911
 script = ExtResource("3_p23t6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_0m8ky")
+skeleton = NodePath("../CollisionShape3D")
+
+[node name="Marker3D" type="Marker3D" parent="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.020413, 0, -1.28726)

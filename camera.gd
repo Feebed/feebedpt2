@@ -7,18 +7,18 @@ func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _unhandled_input(event:InputEvent ): 
-	if event is InputEventMouseMotion:
-		rotation.x -= event.relative.y * mouse_sensetivity
-		
-		rotation.x = clamp(rotation.x, deg_to_rad(-90), deg_to_rad(10)) 
-		
-		rotation.y -= event.relative.x * mouse_sensetivity 
-		rotation.y = wrapf(rotation.y, -PI,PI )
+## Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _unhandled_input(event:InputEvent ): 
+	#if event is InputEventMouseMotion:
+		#rotation.x -= event.relative.y * mouse_sensetivity
+		#
+		#rotation.x = clamp(rotation.x, deg_to_rad(-90), deg_to_rad(10)) 
+		#
+		#rotation.y -= event.relative.x * mouse_sensetivity 
+		#rotation.y = wrapf(rotation.y, -PI,PI )
 	
 	
 	
 	
-	pass
+	#pass
 

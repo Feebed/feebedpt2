@@ -1,10 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://ciy4vhsvh05nw"]
+[gd_scene load_steps=4 format=3 uid="uid://ciy4vhsvh05nw"]
+
+[ext_resource type="Script" path="res://rigid_body_3d.gd" id="1_j4qbm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1umsp"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_nnb4a"]
 
 [node name="RigidBody3D" type="RigidBody3D"]
+script = ExtResource("1_j4qbm")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_1umsp")
