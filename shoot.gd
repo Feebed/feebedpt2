@@ -12,7 +12,7 @@ func _process(delta):
 	var root = get_tree().get_root().get_node("world") 
 	if Input.is_action_just_pressed("shoot"):
 		var newbullet = bullet.instantiate() 
-		newbullet.position = shootpostion.global_position
-		newbullet.rotation.y = $"../../MeshInstance3D".rotation.y 
+		newbullet.transform = shootpostion.global_transform
+		#newbullet.rotation.y = $"../../MeshInstance3D".rotation.y 
 		root.add_child(newbullet)
 	pass

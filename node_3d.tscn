@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb0wl4dncm0ti"]
+[gd_scene load_steps=8 format=3 uid="uid://cb0wl4dncm0ti"]
 
+[ext_resource type="PackedScene" uid="uid://pwmucyagvmbn" path="res://enemy.tscn" id="1_i1vl8"]
 [ext_resource type="PackedScene" uid="uid://d1bo45vb1ubld" path="res://character_body_3d.tscn" id="1_m55r3"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_sgsrl"]
@@ -25,6 +26,9 @@ data = PackedVector3Array(100, 0, 100, -100, 0, 100, 100, 0, -100, -100, 0, 100,
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_pcnxr")
+
+[node name="RigidBody3D" parent="WorldEnvironment" instance=ExtResource("1_i1vl8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.3489, 1.6269, 0.932958)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)

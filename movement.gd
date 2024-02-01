@@ -39,3 +39,10 @@ func _input(event):
 	
 	 
 #rotate the mesh add a line at after 27  then add momentum. then you should start making enimies 
+
+var health=100 
+func _on_area_3d_body_entered(body):
+	if body.is_in_group("bad guy"):
+		health-=.5 
+		print(health)
+		
